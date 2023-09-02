@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.alura</groupId>
+	<artifactId>control-de-stock</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Control de Stock</name>
+	<description>Proyecto para trabajar con bases de datos con JDBC</description>
+
+	<properties>
+		<java.version>20</java.version><!-- Version de java o tambien ${java.version}, en este caso se usa la version 20 -->
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.30</version>
+		</dependency>
+                
+                <dependency><!--Esta es apra crear un pool de conexiones, osea, decir un numero min y max de conexiones a la BD, por ejemplo q max 10 usuarios puedan estar coenctados -->
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5.5</version>
+		</dependency>
+                
+                 <dependency><!--Nos dara mas detalles del data source del log de la consola, siempre ponerla con c3p0-->
+			<groupId>com.mchange</groupId>
+			<artifactId>mchange-commons-java</artifactId>
+			<version>0.2.20</version>
+		</dependency>
+                
+	</dependencies>
+
+	<build><!-- esto debe copiarse y pegarse y modificarse en todos los proyectos -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${java.version}</source><!-- Version de java o tambien ${java.version}, en este caso se usa la version 20 -->
+					<target>${java.version}</target>
+					<optimize>true</optimize>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
